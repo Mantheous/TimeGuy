@@ -10,17 +10,17 @@ PrefabInstance:
     - target: {fileID: 5815460381029585226, guid: 60a327dcea2e863468e3bf4345a6d128,
         type: 3}
       propertyPath: m_Name
-      value: RedButton
+      value: RedButton Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5815460381029585229, guid: 60a327dcea2e863468e3bf4345a6d128,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.417336
+      value: 10.19
       objectReference: {fileID: 0}
     - target: {fileID: 5815460381029585229, guid: 60a327dcea2e863468e3bf4345a6d128,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.528862
+      value: -16.031
       objectReference: {fileID: 0}
     - target: {fileID: 5815460381029585229, guid: 60a327dcea2e863468e3bf4345a6d128,
         type: 3}
@@ -79,6 +79,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5815460381029585230, guid: 60a327dcea2e863468e3bf4345a6d128,
         type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5815460381029585230, guid: 60a327dcea2e863468e3bf4345a6d128,
+        type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -7383224388666246745, guid: fa91346da5f912a4cbbc6ea4cfd64b24,
@@ -88,5 +93,15 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 6829b393d35779a479e6370616818a24, type: 2}
+    - target: {fileID: 5815460381029585224, guid: 60a327dcea2e863468e3bf4345a6d128,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.34348702
+      objectReference: {fileID: 0}
+    - target: {fileID: 5815460381029585224, guid: 60a327dcea2e863468e3bf4345a6d128,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.07147169
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60a327dcea2e863468e3bf4345a6d128, type: 3}
