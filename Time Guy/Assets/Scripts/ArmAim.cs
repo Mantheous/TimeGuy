@@ -1,0 +1,13 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Animations;
+
+public class ArmAim : MonoBehaviour
+{
+
+    void Update()
+    {
+        
+    }
+}
