@@ -8,13 +8,21 @@ public class RocketLaunch : MonoBehaviour
     public Transform firepoint;
     public Transform firepos;
     public float bulletForce;
+    int bulletCount;
+    public int MaxRockets;
     void Update()
     {
         if(Input.GetButtonDown("Fire4"))
         {
-            GameObject bullet = Instantiate(rocket, firepos.position, firepoint.rotation);
-            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            rb.AddForce(firepoint.right * bulletForce, ForceMode2D.Impulse);
+            if (bulletCount <= MaxRockets)
+            {
+                GameObject bullet = Instantiate(rocket, firepos.position, firepoint.rotation);
+                Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+                rb.AddForce(firepoint.right * bulletForce, ForceMode2D.Impulse);
+                
+            }
         }
     }
+
+
 }

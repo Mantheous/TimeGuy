@@ -8,6 +8,7 @@ public class RocketExpd : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        
         GameObject hit = collision.gameObject;
         if (hit.GetComponent<BadGuyDie>() != null)
         {
