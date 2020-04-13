@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 2061741809067643698}
   m_Layer: 0
   m_Name: Floating platform
-  m_TagString: ground
+  m_TagString: block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

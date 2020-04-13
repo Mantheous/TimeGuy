@@ -10,6 +10,7 @@ public class JumperMove : MonoBehaviour
     public float jumpDis;
     public bool grounded;
     float jumpDisF;
+    bool forward;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,16 +21,26 @@ public class JumperMove : MonoBehaviour
     {
         if(transform.position.x < playerPos.position.x)
         {
-            transform.localScale = new Vector3(-5, 5, 1);
+            forward = true;
+            
             jumpDisF = -jumpDis;
-        }else
-        {
-            transform.localScale = new Vector3(5, 5, 1);
-            jumpDisF = jumpDis;
+            jumpDisF += playerPos.position.x - transform.position.x;
         }
-
+        else
+        {
+            forward = false;
+            
+            jumpDisF = jumpDis;
+            jumpDisF -= playerPos.position.x - transform.position.x;
+        }
+        
         if(grounded)
         {
+            if(forward)
+                transform.localScale = new Vector3(-5, 5, 1);
+            else
+                transform.localScale = new Vector3(5, 5, 1);
+
             //Jump up
             rb.AddForce(new Vector2(jumpDisF, jumpheight));
 

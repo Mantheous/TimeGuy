@@ -8,6 +8,7 @@ TagManager:
   - DeathTile
   - Enemey
   - missle
+  - block
   layers:
   - Default
   - TransparentFX
