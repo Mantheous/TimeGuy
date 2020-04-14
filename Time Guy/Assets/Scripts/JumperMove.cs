@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class JumperMove : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class JumperMove : MonoBehaviour
     public bool grounded;
     float jumpDisF;
     bool forward;
+    public Animator animator;
+    bool active;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,16 +39,20 @@ public class JumperMove : MonoBehaviour
         
         if(grounded)
         {
-            if(forward)
-                transform.localScale = new Vector3(-5, 5, 1);
-            else
-                transform.localScale = new Vector3(5, 5, 1);
+            if(active)
+            {
+                if(forward)
+                    transform.localScale = new Vector3(-5, 5, 1);
+                else
+                    transform.localScale = new Vector3(5, 5, 1);
 
-            //Jump up
-            rb.AddForce(new Vector2(jumpDisF, jumpheight));
+                //Jump up
+                rb.AddForce(new Vector2(jumpDisF, jumpheight));
 
             
-            grounded = false;
+                grounded = false;
+            }
+            
         }
     }
 
@@ -53,5 +60,13 @@ public class JumperMove : MonoBehaviour
     {
         grounded = ground_;
         //Debug.Log("groundSet");
+        animator.SetBool("Grounded", ground_);
+    }
+
+    public void activeSet(bool active_)
+    {
+        active = active_;
+        //Debug.Log("groundSet");
+        //animator.SetBool("Grounded", ground_);
     }
 }

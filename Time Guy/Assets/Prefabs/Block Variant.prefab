@@ -29,22 +29,17 @@ PrefabInstance:
     - target: {fileID: 3438866463873659125, guid: 4eecf8330503a9f45acfe5154054e9aa,
         type: 3}
       propertyPath: m_Name
-      value: Block Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 3438866463873659125, guid: 4eecf8330503a9f45acfe5154054e9aa,
-        type: 3}
-      propertyPath: m_TagString
-      value: block
+      value: Block Variant (1)
       objectReference: {fileID: 0}
     - target: {fileID: 3438866463873659124, guid: 4eecf8330503a9f45acfe5154054e9aa,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.62
+      value: 32.446617
       objectReference: {fileID: 0}
     - target: {fileID: 3438866463873659124, guid: 4eecf8330503a9f45acfe5154054e9aa,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.3
+      value: 7.133451
       objectReference: {fileID: 0}
     - target: {fileID: 3438866463873659124, guid: 4eecf8330503a9f45acfe5154054e9aa,
         type: 3}
@@ -91,15 +86,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3438866463873659115, guid: 4eecf8330503a9f45acfe5154054e9aa,
+    - target: {fileID: 3438866463873659124, guid: 4eecf8330503a9f45acfe5154054e9aa,
         type: 3}
-      propertyPath: m_GravityScale
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3438866463873659124, guid: 4eecf8330503a9f45acfe5154054e9aa,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3438866463873659124, guid: 4eecf8330503a9f45acfe5154054e9aa,
+        type: 3}
+      propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3438866463873659115, guid: 4eecf8330503a9f45acfe5154054e9aa,
         type: 3}
       propertyPath: m_Mass
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3438866463873659115, guid: 4eecf8330503a9f45acfe5154054e9aa,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4eecf8330503a9f45acfe5154054e9aa, type: 3}
