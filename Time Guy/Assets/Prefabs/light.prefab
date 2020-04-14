@@ -167,6 +167,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  door: {fileID: 0}
+  openDoor: 0
+  DeathEffect: 1
+  deleteEffect: 1
+  deathEffect: {fileID: 2410958181713303833, guid: 7c4bd72f9529aaf4bbb256165d52797d,
+    type: 3}
 --- !u!61 &2717645164914219217
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class BadGuyDie : MonoBehaviour
     public Door door;
     public bool openDoor;
     public bool DeathEffect;
+    public bool deleteEffect;
     public GameObject deathEffect;
     // Update is called once per frame
     void Update()
@@ -25,7 +26,13 @@ public class BadGuyDie : MonoBehaviour
 
             //DeathAnimation
             if(DeathEffect)
-                Instantiate(deathEffect, transform.position, transform.rotation);
+            {
+                GameObject effect = Instantiate(deathEffect, transform.position, transform.rotation);
+                if(deleteEffect)
+                {
+                    Destroy(effect, 5);
+                }
+            }
 
             Destroy(gameObject);
         }
