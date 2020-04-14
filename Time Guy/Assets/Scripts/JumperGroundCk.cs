@@ -5,13 +5,13 @@ using UnityEngine;
 public class JumperGroundCk : MonoBehaviour
 {
     public JumperMove jumperMove;
-    public float pushback;
-    bool forward;
+    //public float pushback;
+    //bool forward;
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "ground")
+        if (collision.gameObject.tag == "ground" || collision.gameObject.tag == "block")
             jumperMove.groundSet(true);
-        
+        /*
         if(collision.gameObject.tag == "block")
         {
             Rigidbody2D rb = collision.GetComponent<Rigidbody2D>();
@@ -20,7 +20,7 @@ public class JumperGroundCk : MonoBehaviour
             else
                 rb.AddForce(new Vector2(pushback, 0), ForceMode2D.Impulse);
         }
-        
+        */
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -28,7 +28,7 @@ public class JumperGroundCk : MonoBehaviour
         if (collision.gameObject.tag == "ground")
             jumperMove.groundSet(false);
     }
-    
+    /*
     private void Update()
     {
         if (GetComponentInParent<Transform>().localScale.x == 5)
@@ -39,5 +39,5 @@ public class JumperGroundCk : MonoBehaviour
             forward = false;
         }
     }
-    
+    */
 }
