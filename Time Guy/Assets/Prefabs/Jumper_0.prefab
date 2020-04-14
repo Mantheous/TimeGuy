@@ -158,6 +158,7 @@ GameObject:
   - component: {fileID: 4917416559907625102}
   - component: {fileID: 4917416559907625097}
   - component: {fileID: 2720411770085409146}
+  - component: {fileID: 9071752170815518718}
   m_Layer: 0
   m_Name: Jumper_0
   m_TagString: DeathTile
@@ -389,6 +390,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.09389722, y: 0.18633658}
   m_EdgeRadius: 0
+--- !u!95 &9071752170815518718
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4917416559907625137}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7f0b9ed412313eb429818fd4c4b660d0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4937072247662889716
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,7 +549,7 @@ PolygonCollider2D:
     - - {x: -0.1553154, y: 0.21681328}
       - {x: -0.17447892, y: -0.15032044}
       - {x: 0.13606797, y: -0.2779499}
-      - {x: 0.10855637, y: -0.5615372}
+      - {x: 0.14519349, y: -0.6027531}
       - {x: -0.033729553, y: -0.7459343}
       - {x: 0.19527817, y: -0.746603}
       - {x: 0.38397828, y: -0.5663895}
