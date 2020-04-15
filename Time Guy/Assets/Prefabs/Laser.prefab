@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 1999830516412795803}
   - component: {fileID: 3869733122005924927}
   - component: {fileID: 972346139214380046}
+  - component: {fileID: 6456984130695989220}
   m_Layer: 0
   m_Name: New Piskel (31)_0
   m_TagString: DeathTile
@@ -303,6 +304,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6456984130695989220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5214069456556321142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 539b738c0904bb64ebf1c7b9247adbc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  isKinamatic: 1
+  animator: {fileID: 1999830516412795803}
 --- !u!1 &7482605151888395644
 GameObject:
   m_ObjectHideFlags: 0

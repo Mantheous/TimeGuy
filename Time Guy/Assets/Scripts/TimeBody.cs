@@ -15,16 +15,18 @@ public class TimeBody : MonoBehaviour
     void Start()
     {
         positions = new List<Vector2>();
+        animator.SetFloat("Speed", 1);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButton("Fire3"))
+        if(Input.GetButtonDown("Fire3"))
         {
             StartRewind();
+            //Debug.Log("Start Rewind");
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        if (Input.GetButtonUp("Fire3"))
         {
             StopRewind();
         }
@@ -43,6 +45,7 @@ public class TimeBody : MonoBehaviour
 
     void Record()
     {
+        Debug.Log("Recording");
         if(!isKinamatic)
             positions.Insert(0, transform.position);
     }
@@ -59,7 +62,11 @@ public class TimeBody : MonoBehaviour
             }
                 
             if(animator != null)
+            {
                 animator.SetFloat("Speed", -1);
+                Debug.Log("ReAnimating");
+            }
+                
         }else
         {
             StopRewind();
