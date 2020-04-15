@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class TimeBody : MonoBehaviour
 {
     public static bool isRewinding;
     public Rigidbody2D rb;
+    public bool isKinamatic;
+    public Animator animator;
 
     List<Vector2> positions;
     // Start is called before the first frame update
@@ -40,7 +43,8 @@ public class TimeBody : MonoBehaviour
 
     void Record()
     {
-        positions.Insert(0, transform.position);
+        if(!isKinamatic)
+            positions.Insert(0, transform.position);
     }
 
     void Rewind()
@@ -48,11 +52,19 @@ public class TimeBody : MonoBehaviour
         if (positions.Count > 0)
         {
             //transform.position = positions[0];
-            rb.MovePosition(positions[0]);
-            positions.RemoveAt(0);
+            if (!isKinamatic)
+            {
+                rb.MovePosition(positions[0]);
+                positions.RemoveAt(0);
+            }
+                
+            if(animator != null)
+                animator.SetFloat("Speed", -1);
         }else
         {
             StopRewind();
+            if (animator != null)
+                animator.SetFloat("Speed", 1);
         }
         
     }

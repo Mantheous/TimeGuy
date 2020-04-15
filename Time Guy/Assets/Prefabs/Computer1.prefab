@@ -83,6 +83,7 @@ GameObject:
   - component: {fileID: 7507355770658837312}
   - component: {fileID: 6167716836386484001}
   - component: {fileID: 8601280390305201161}
+  - component: {fileID: 3474738931138473991}
   m_Layer: 0
   m_Name: Computer1
   m_TagString: block
@@ -222,6 +223,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3474738931138473991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3144348000025078577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 539b738c0904bb64ebf1c7b9247adbc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 6167716836386484001}
+  isKinamatic: 0
+  animator: {fileID: 8601280390305201161}
 --- !u!1 &9111199724608980651
 GameObject:
   m_ObjectHideFlags: 0
