@@ -9,7 +9,7 @@ public class RocketLauncherPoint : MonoBehaviour
     public Camera cam;
     public Transform Guyloc;
     public Vector2 handChange;
-    public Animator animator;
+    public Animator leftArm;
     public Animator body;
     int Aoutput;
     public Transform laserOrigin;
@@ -88,7 +88,7 @@ public class RocketLauncherPoint : MonoBehaviour
 
     void setA(float output, bool forwards)
     {
-        animator.SetInteger("Angle", Mathf.RoundToInt(output));
+        leftArm.SetInteger("Angle", Mathf.RoundToInt(output));
         body.SetBool("forwards", forwards);
         Debug.Log(output);
     }

@@ -63,7 +63,7 @@ public class SmasherMove : MonoBehaviour
         if(collision.gameObject.tag == "Player" && smashing)
         {
             GameObject effect = Instantiate(death, transform.position, transform.rotation);
-            Destroy(effect, 0.1f);
+            Destroy(effect, 0.02f);
         }
     }
 
