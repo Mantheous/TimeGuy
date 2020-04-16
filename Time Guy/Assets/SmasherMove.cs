@@ -12,6 +12,7 @@ public class SmasherMove : MonoBehaviour
     public GameObject death;
     public float forceMult;
     bool go;
+    public float returnSpd;
 
     private void Start()
     {
@@ -21,7 +22,7 @@ public class SmasherMove : MonoBehaviour
     {
         if (!smashing)
         {
-            rb.MovePosition(saveLoc.position);
+
             animator.SetBool("Smashing", false);
             rb.gravityScale = 0;
             go = false;
@@ -33,8 +34,16 @@ public class SmasherMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(go)
+        if (go)
+        {
             rb.velocity = transform.up * -forceMult * Time.deltaTime;
+        }
+        else
+        {
+            rb.velocity = transform.up * returnSpd * Time.deltaTime;
+            //rb.velocity = (saveLoc.position - transform.position).normalized * returnSpd;
+            //rb.MovePosition(Vector2.MoveTowards(transform.position, saveLoc.position, returnSpd));
+        }
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
