@@ -131,7 +131,7 @@ MonoBehaviour:
   cam: {fileID: 0}
   Guyloc: {fileID: 0}
   handChange: {x: 0.3, y: 0}
-  animator: {fileID: 0}
+  leftArm: {fileID: 0}
   body: {fileID: 0}
   laserOrigin: {fileID: 0}
   laser: {fileID: 0}
@@ -146,7 +146,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7479653650741018878}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

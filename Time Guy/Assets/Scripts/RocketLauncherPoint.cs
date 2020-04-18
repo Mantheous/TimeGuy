@@ -67,23 +67,17 @@ public class RocketLauncherPoint : MonoBehaviour
     {
         float inx = Input.GetAxis("Horizontal1");
         float iny = Input.GetAxis("Vertical1");
-
+        //Debug.Log(inx + "," + iny);
         float angle = Mathf.Atan2(iny, inx) * Mathf.Rad2Deg + 90;
         if (inx !=0 && iny != 0)
         {
             rb.rotation = angle;
         }
-        //Debug.Log(angle);
+        Debug.Log(angle);
 
 
         Vector2 handLoc = new Vector2(Guyloc.position.x + handChange.x, Guyloc.position.y + handChange.y);
         rb.MovePosition(handLoc);
-
-        RaycastHit2D hit = Physics2D.Raycast(laserOrigin.position, new Vector2(-iny, inx), Mathf.Infinity);
-        //Debug.DrawRay(transform.position, new Vector2(inx, iny), Color.green);
-        //hit.point;
-        laser.point(hit.point);
-        //Debug.Log(hit.point);
     }
 
     void setA(float output, bool forwards)

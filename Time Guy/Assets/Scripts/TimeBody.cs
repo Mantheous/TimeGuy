@@ -15,7 +15,8 @@ public class TimeBody : MonoBehaviour
     void Start()
     {
         positions = new List<Vector2>();
-        animator.SetFloat("Speed", 1);
+        if(animator != null)
+            animator.SetFloat("Speed", 1);
     }
 
     // Update is called once per frame

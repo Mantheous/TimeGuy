@@ -142,6 +142,7 @@ GameObject:
   - component: {fileID: 8110471492036344848}
   - component: {fileID: 8110471492036344851}
   - component: {fileID: 8110471492036344853}
+  - component: {fileID: 1546667811091864314}
   m_Layer: 0
   m_Name: Smasher
   m_TagString: Untagged
@@ -325,3 +326,18 @@ MonoBehaviour:
   death: {fileID: 1942863960083833214, guid: 3470a8af86bc5644980a3d33822735a2, type: 3}
   forceMult: 1500
   returnSpd: 500
+--- !u!114 &1546667811091864314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8110471492036344850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 539b738c0904bb64ebf1c7b9247adbc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 8110471492036344854}
+  isKinamatic: 0
+  animator: {fileID: 0}
