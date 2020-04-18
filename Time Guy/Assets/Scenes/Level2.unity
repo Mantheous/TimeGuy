@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3206,7 +3206,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 530250814}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05d8fab1e7dbf134ab50ea6705df2989, type: 3}
   m_Name: 
@@ -10929,7 +10929,7 @@ PrefabInstance:
     - target: {fileID: 8813774558439919120, guid: 0e1ddc42b1c1b7e44abab397baf0111c,
         type: 3}
       propertyPath: fireRate
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8813774558439919120, guid: 0e1ddc42b1c1b7e44abab397baf0111c,
         type: 3}
@@ -12034,7 +12034,7 @@ PrefabInstance:
     - target: {fileID: 8813774558439919120, guid: 0e1ddc42b1c1b7e44abab397baf0111c,
         type: 3}
       propertyPath: fireRate
-      value: 0.35
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8813774558439919120, guid: 0e1ddc42b1c1b7e44abab397baf0111c,
         type: 3}
@@ -14153,12 +14153,12 @@ PrefabInstance:
     - target: {fileID: 4025299404163919401, guid: 5ed88dc089d5b214195080d84cd809f0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 39.8
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 4025299404163919401, guid: 5ed88dc089d5b214195080d84cd809f0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.91
+      value: -19.7
       objectReference: {fileID: 0}
     - target: {fileID: 4025299404163919401, guid: 5ed88dc089d5b214195080d84cd809f0,
         type: 3}

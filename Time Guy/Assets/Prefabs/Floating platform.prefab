@@ -328,4 +328,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 2061741809067643694}
   isKinamatic: 0
-  animator: {fileID: 2061741809067643698}
+  animator: {fileID: 0}

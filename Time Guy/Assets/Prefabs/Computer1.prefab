@@ -237,7 +237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 6167716836386484001}
   isKinamatic: 0
-  animator: {fileID: 8601280390305201161}
+  animator: {fileID: 0}
 --- !u!1 &9111199724608980651
 GameObject:
   m_ObjectHideFlags: 0
