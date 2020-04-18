@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2265447240912768510}
   - component: {fileID: 2265447240912768497}
   - component: {fileID: 1093682998073074126}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ PointEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 6455
   m_ForceMagnitude: 2000
   m_ForceVariation: 0
   m_DistanceScale: 1
@@ -172,7 +172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 271736072282433286}
   - component: {fileID: 3719968796966312623}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Point Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
