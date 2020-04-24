@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1346409441391160857}
   - component: {fileID: 4781972688570498632}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point Light 2D
   m_TagString: Enemey
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 8691427900640149490}
   - component: {fileID: 7777138094852878195}
   - component: {fileID: 3610966137748235636}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: DroneBeam
   m_TagString: DeathTile
   m_Icon: {fileID: 0}
@@ -206,6 +206,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: -4623818994288468395}
+  isKinamatic: 0
+  animator: {fileID: 0}
 --- !u!114 &3610966137748235636
 MonoBehaviour:
   m_ObjectHideFlags: 0

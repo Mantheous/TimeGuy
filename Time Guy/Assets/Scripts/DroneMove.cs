@@ -13,6 +13,9 @@ public class DroneMove : MonoBehaviour
     public GameObject laserPrefab;
     public Transform firepoint;
     public float bulletForce;
+    
+    public bool Spreader;
+    public float variance = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +31,10 @@ public class DroneMove : MonoBehaviour
             timer = 0;
             GameObject laser = Instantiate(laserPrefab, firepoint.position, firepoint.rotation);
             Rigidbody2D rb = laser.GetComponent<Rigidbody2D>();
-            rb.AddForce(firepoint.right * -bulletForce, ForceMode2D.Impulse);
+            
+            rb.AddForce(firepoint.right * -bulletForce , ForceMode2D.Impulse);
+            if (Spreader)
+                rb.AddForce(firepoint.up * Random.Range(-variance, variance));
             Destroy(laser, 2);
         }
     }
