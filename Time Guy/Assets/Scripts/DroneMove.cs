@@ -13,6 +13,7 @@ public class DroneMove : MonoBehaviour
     public GameObject laserPrefab;
     public Transform firepoint;
     public float bulletForce;
+    public float bulletLifeTime = 2;
     
     public bool Spreader;
     public float variance = 1;
@@ -35,7 +36,7 @@ public class DroneMove : MonoBehaviour
             rb.AddForce(firepoint.right * -bulletForce , ForceMode2D.Impulse);
             if (Spreader)
                 rb.AddForce(firepoint.up * Random.Range(-variance, variance));
-            Destroy(laser, 2);
+            Destroy(laser, bulletLifeTime);
         }
     }
 
