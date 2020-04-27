@@ -333,6 +333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ClimbCheck: 1
+  RightCheck: 0
   tgmove: {fileID: 1477588676}
   tgdie: {fileID: 1477588675}
 --- !u!61 &170115857
@@ -348,7 +349,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.19676018, y: 0.2630167}
+  m_Offset: {x: 0.29402447, y: 0.2630167}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -359,7 +360,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.015460968, y: 0.5594311}
+  m_Size: {x: 0.009019852, y: 0.5594311}
   m_EdgeRadius: 0
 --- !u!4 &182702194 stripped
 Transform:
@@ -935,6 +936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ClimbCheck: 1
+  RightCheck: 0
   tgmove: {fileID: 1477588676}
   tgdie: {fileID: 1477588675}
 --- !u!61 &410863982
@@ -950,7 +952,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.19676018, y: 0.2630167}
+  m_Offset: {x: 0.29402447, y: 0.2630167}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -961,7 +963,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.015460968, y: 0.5594311}
+  m_Size: {x: 0.009019852, y: 0.5594311}
   m_EdgeRadius: 0
 --- !u!1001 &438690221
 PrefabInstance:
@@ -3608,6 +3610,27 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 0.013849735
       objectReference: {fileID: 0}
+    - target: {fileID: 4025299404163919407, guid: 5ed88dc089d5b214195080d84cd809f0,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0021509528
+      objectReference: {fileID: 0}
+    - target: {fileID: 4025299404163919407, guid: 5ed88dc089d5b214195080d84cd809f0,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.569807
+      objectReference: {fileID: 0}
+    - target: {fileID: 4025299404770366154, guid: 5ed88dc089d5b214195080d84cd809f0,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8492853438003576814, guid: 07da2cfce3d12404cb08282b5241f305,
+        type: 3}
+    - target: {fileID: 4025299404770366154, guid: 5ed88dc089d5b214195080d84cd809f0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f0d1a7360ed0bcb4bb71f53061eb4c41, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ed88dc089d5b214195080d84cd809f0, type: 3}
 --- !u!1001 &1757921197

@@ -1,7 +1,19 @@
 fileFormatVersion: 2
 guid: 5327b88ef422dbf47b3907133be1e5b1
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -3939289772346489874
+    second: Rollin climb GunArm_0
+  - first:
+      213: 8626906182932693605
+    second: Rollin climb GunArm_1
+  - first:
+      213: -8218739239361738074
+    second: Rollin climb GunArm_2
+  - first:
+      213: -6968826127398790299
+    second: Rollin climb GunArm_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -132,11 +144,95 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Rollin climb GunArm_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3ee88000b19de14eb8cdbb2bb667339
+      internalID: -3939289772346489874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rollin climb GunArm_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1f0e4e41cb5e494b8caf56a9d416c02
+      internalID: 8626906182932693605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rollin climb GunArm_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e912ff81445c9d44b97af708d5e4dc0
+      internalID: -8218739239361738074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rollin climb GunArm_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67470f5970ae3fa408c33364397ba485
+      internalID: -6968826127398790299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 391b8949f0a3e6040aaa61ece72ad39a
     internalID: 0
     vertices: []
     indices: 

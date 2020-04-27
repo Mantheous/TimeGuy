@@ -6,6 +6,7 @@ public class GroundCheck : MonoBehaviour
 {
     bool grounded;
     public bool ClimbCheck;
+    public bool RightCheck;
     [SerializeField]
     private TGmove tgmove;
 
@@ -23,7 +24,10 @@ public class GroundCheck : MonoBehaviour
                 tgmove.groundSet(true);
             }else
             {
-                tgmove.climbSet(true);
+                if (RightCheck)
+                    tgmove.climbSet(true, true);
+                else
+                    tgmove.climbSet(true, false);
             }
             
         }
@@ -48,7 +52,10 @@ public class GroundCheck : MonoBehaviour
                 tgmove.groundSet(false);
             }else
             {
-                tgmove.climbSet(false);
+                if (RightCheck)
+                    tgmove.climbSet(false, true);
+                else
+                    tgmove.climbSet(false, false);
             }
                 
         }

@@ -1,7 +1,19 @@
 fileFormatVersion: 2
 guid: 07da2cfce3d12404cb08282b5241f305
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -8492853438003576814
+    second: Rollin climb Legs_0
+  - first:
+      213: 4257896009066348587
+    second: Rollin climb Legs_1
+  - first:
+      213: 2411898392427742090
+    second: Rollin climb Legs_2
+  - first:
+      213: -6439631864586999522
+    second: Rollin climb Legs_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -132,11 +144,95 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Rollin climb Legs_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d1f0570898054840856628cb6757360
+      internalID: -8492853438003576814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rollin climb Legs_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9284933af54a3ea48b468310c62e283f
+      internalID: 4257896009066348587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rollin climb Legs_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46712b43b3da8fe4f8982cd80c3da79d
+      internalID: 2411898392427742090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rollin climb Legs_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4264883ca4c44c946aa7ffc2082143d0
+      internalID: -6439631864586999522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 25f274f80a856264a85352f2951eea39
     internalID: 0
     vertices: []
     indices: 

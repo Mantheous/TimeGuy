@@ -18,6 +18,7 @@ public class TGmove : MonoBehaviour
 
     public Animator rightArm;
     public Animator legs;
+    bool right;
     bool freeze = false;
     bool jump;
     
@@ -83,9 +84,11 @@ public class TGmove : MonoBehaviour
         //Debug.Log("groundSet");
     }
 
-    public void climbSet(bool _climb)
+    public void climbSet(bool _climb, bool _right)
     {
         climb = _climb;
+        right = _right;
+        legs.SetBool("Climbing", true);
     }
 
     public void Freeze()
