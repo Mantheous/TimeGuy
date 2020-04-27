@@ -10,6 +10,8 @@ public class TGmove : MonoBehaviour
     public float moveSpd;
     public float jumpforce;
     public bool grounded;
+    public bool climb;
+
     float fmoveSpd;
     float fjumpforce;
     public float timeSpdup;
@@ -17,6 +19,7 @@ public class TGmove : MonoBehaviour
     public Animator rightArm;
     public Animator legs;
     bool freeze = false;
+    bool jump;
     
     //public GroundCheck groundCheck;
     
@@ -30,25 +33,47 @@ public class TGmove : MonoBehaviour
 
         //grounded = groundReturn();
 
-        if (grounded)
+        if (grounded || climb)
         {
             movement.y = 0;
             if (Input.GetButton("Jump"))
             {
-                movement.y = 1;
+                if(!grounded)
+                    movement.y = 1;
+                else
+                    jump = true;
             }
         }else{
-            movement.y -= Time.deltaTime;
+            if (grounded)
+                movement.y -= Time.deltaTime;
+            else
+                jump = false;
         }
-        rightArm.SetFloat("Velocity", movement.y);
+        if (rb != null)
+        rightArm.SetFloat("Velocity", rb.velocity.y);
         legs.SetInteger("Movement", Mathf.RoundToInt(Input.GetAxis("Horizontal")));
     }
 
     private void FixedUpdate()
     {
-        if (!freeze)
+        if (!freeze || rb != null)
         {
-            rb.velocity = new Vector2(movement.x * fmoveSpd * Time.fixedDeltaTime, movement.y * fjumpforce * Time.fixedDeltaTime);
+            //rb.velocity = new Vector2(movement.x * fmoveSpd * Time.fixedDeltaTime, movement.y * fjumpforce * Time.fixedDeltaTime);
+            if (!climb)
+            {
+                rb.gravityScale = 1;
+                rb.velocity = new Vector2(movement.x * fmoveSpd * Time.fixedDeltaTime, rb.velocity.y);
+            }
+            else {
+                rb.gravityScale = 0;
+                rb.velocity = new Vector2(movement.x * fmoveSpd * Time.fixedDeltaTime, movement.y * fjumpforce * Time.fixedDeltaTime);
+                Debug.Log("climb");
+            }
+
+            if (jump && grounded)
+            {
+                rb.AddForce(Vector2.up * jumpforce);
+            }
         }
     }
 
@@ -56,6 +81,11 @@ public class TGmove : MonoBehaviour
     {
         grounded = ground_;
         //Debug.Log("groundSet");
+    }
+
+    public void climbSet(bool _climb)
+    {
+        climb = _climb;
     }
 
     public void Freeze()

@@ -5,7 +5,7 @@ using UnityEngine;
 public class GroundCheck : MonoBehaviour
 {
     bool grounded;
-
+    public bool ClimbCheck;
     [SerializeField]
     private TGmove tgmove;
 
@@ -16,9 +16,16 @@ public class GroundCheck : MonoBehaviour
     {
         if (collision.gameObject.tag == "ground" || collision.gameObject.tag == "block")
         {
-            grounded = true;
-            Debug.Log("Grounded1" + grounded);
-            tgmove.groundSet(true);
+            if (!ClimbCheck)
+            {
+                grounded = true;
+                Debug.Log("Grounded1" + grounded);
+                tgmove.groundSet(true);
+            }else
+            {
+                tgmove.climbSet(true);
+            }
+            
         }
         /*
         if (collision.gameObject.tag == "DeathTile")
@@ -34,9 +41,16 @@ public class GroundCheck : MonoBehaviour
     {
         if (collision.gameObject.tag == "ground" || collision.gameObject.tag == "block")
         {
-            grounded = false;
-            Debug.Log("Grounded1" + grounded);
-            tgmove.groundSet(false);
+            if (!ClimbCheck)
+            {
+                grounded = false;
+                Debug.Log("Grounded1" + grounded);
+                tgmove.groundSet(false);
+            }else
+            {
+                tgmove.climbSet(false);
+            }
+                
         }
     }
 
