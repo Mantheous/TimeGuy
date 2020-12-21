@@ -2662,6 +2662,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 905187662}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1262751696 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4025299404055011529, guid: 5ed88dc089d5b214195080d84cd809f0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1720782668}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1262790882
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3530,6 +3536,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Time Guy
       objectReference: {fileID: 0}
+    - target: {fileID: 4025299404163919402, guid: 5ed88dc089d5b214195080d84cd809f0,
+        type: 3}
+      propertyPath: torso
+      value: 
+      objectReference: {fileID: 1262751696}
     - target: {fileID: 4025299404163919401, guid: 5ed88dc089d5b214195080d84cd809f0,
         type: 3}
       propertyPath: m_LocalPosition.x

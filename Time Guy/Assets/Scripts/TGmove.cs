@@ -18,6 +18,7 @@ public class TGmove : MonoBehaviour
 
     public Animator rightArm;
     public Animator legs;
+    public Animator torso;
     bool right;
     bool freeze = false;
     bool jump;
@@ -34,22 +35,23 @@ public class TGmove : MonoBehaviour
 
         //grounded = groundReturn();
 
-        if (grounded || climb)
+        if (grounded)
         {
-            movement.y = 0;
             if (Input.GetButton("Jump"))
             {
-                if(!grounded)
-                    movement.y = 1;
-                else
-                    jump = true;
+               jump = true;
             }
-        }else{
-            if (grounded)
-                movement.y -= Time.deltaTime;
-            else
+           else
+            {
                 jump = false;
+            }
         }
+
+        if(climb)
+        {
+            movement.y = -Input.GetAxis("Vertical");
+        }
+
         if (rb != null)
         rightArm.SetFloat("Velocity", rb.velocity.y);
         legs.SetInteger("Movement", Mathf.RoundToInt(Input.GetAxis("Horizontal")));
@@ -88,7 +90,9 @@ public class TGmove : MonoBehaviour
     {
         climb = _climb;
         right = _right;
-        legs.SetBool("Climbing", true);
+        legs.SetBool("Climbing", climb);
+        torso.SetBool("Climbing", climb);
+        torso.SetBool("Right", right);
     }
 
     public void Freeze()
