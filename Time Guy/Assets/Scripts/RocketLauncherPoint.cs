@@ -73,7 +73,7 @@ public class RocketLauncherPoint : MonoBehaviour
         {
             rb.rotation = angle;
         }
-        Debug.Log(angle);
+        //Debug.Log(angle);
 
 
         Vector2 handLoc = new Vector2(Guyloc.position.x + handChange.x, Guyloc.position.y + handChange.y);
@@ -84,7 +84,7 @@ public class RocketLauncherPoint : MonoBehaviour
     {
         leftArm.SetInteger("Angle", Mathf.RoundToInt(output));
         body.SetBool("forwards", forwards);
-        Debug.Log(output);
+        //Debug.Log(output);
     }
 
     /*

@@ -46,7 +46,7 @@ public class TimeBody : MonoBehaviour
 
     void Record()
     {
-        Debug.Log("Recording");
+        //Debug.Log("Recording");
         if(!isKinamatic)
             positions.Insert(0, transform.position);
     }

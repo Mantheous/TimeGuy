@@ -1,5 +1,79 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2688998063602860638
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4926654160487534967}
+  - component: {fileID: 1412222900462557409}
+  - component: {fileID: 6250312008927606497}
+  m_Layer: 9
+  m_Name: ClimbCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4926654160487534967
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2688998063602860638}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.317, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4025299404163919401}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1412222900462557409
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2688998063602860638}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0024843216, y: 0.32326984}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.4447533, y: 0.7202549}
+  m_EdgeRadius: 0
+--- !u!114 &6250312008927606497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2688998063602860638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cecb1caaf36fef44b54796e67a562e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ClimbCheck: 1
+  RightCheck: 0
+  tgmove: {fileID: 4025299404163919402}
+  tgdie: {fileID: 4025299404163919403}
 --- !u!1 &4025299403487143719
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,7 +298,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4025299404163919401}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4025299403965546636
 MonoBehaviour:
@@ -298,7 +372,7 @@ Transform:
   - {fileID: 4025299403664737689}
   - {fileID: 4025299405274390189}
   m_Father: {fileID: 4025299404163919401}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &4025299404055011529
 Animator:
@@ -404,6 +478,7 @@ Transform:
   m_Children:
   - {fileID: 6444275064429907119}
   - {fileID: 4025299404299127138}
+  - {fileID: 4926654160487534967}
   - {fileID: 4025299403965546643}
   - {fileID: 4025299404658256609}
   - {fileID: 4025299404169328785}
@@ -522,11 +597,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 4025299404163919406}
   moveSpd: 300
+  climbingSpd: 200
   jumpforce: 500
   grounded: 0
+  climb: 0
   timeSpdup: 0.007
   rightArm: {fileID: 4025299405274390191}
   legs: {fileID: 4025299404770366153}
+  torso: {fileID: 0}
 --- !u!114 &4025299404163919403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -609,7 +687,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4025299404163919401}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &4025299404169328787
 Camera:
@@ -726,7 +804,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.38993263, y: 0.048624992}
+  m_Size: {x: 0.2736786, y: 0.048624992}
   m_EdgeRadius: 0
 --- !u!114 &4025299404299127139
 MonoBehaviour:
@@ -740,6 +818,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cecb1caaf36fef44b54796e67a562e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ClimbCheck: 0
+  RightCheck: 0
   tgmove: {fileID: 4025299404163919402}
   tgdie: {fileID: 4025299404163919403}
 --- !u!1 &4025299404658256614
@@ -772,7 +852,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4025299404163919401}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &4025299404658256608
 Camera:
@@ -855,7 +935,7 @@ Transform:
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4025299404163919401}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4025299404770366154
 SpriteRenderer:
@@ -1074,6 +1154,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 7479653650741018875, guid: 3d09077e714fa334c8ad34ecb95096c5,
+        type: 3}
+      propertyPath: firepos
+      value: 
+      objectReference: {fileID: 4025299404924742682}
     - target: {fileID: 7479653650741018879, guid: 3d09077e714fa334c8ad34ecb95096c5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1152,11 +1237,6 @@ PrefabInstance:
     - target: {fileID: 7479653650741018877, guid: 3d09077e714fa334c8ad34ecb95096c5,
         type: 3}
       propertyPath: laserOrigin
-      value: 
-      objectReference: {fileID: 4025299404924742682}
-    - target: {fileID: 7479653650741018875, guid: 3d09077e714fa334c8ad34ecb95096c5,
-        type: 3}
-      propertyPath: firepos
       value: 
       objectReference: {fileID: 4025299404924742682}
     - target: {fileID: 7479653650070482733, guid: 3d09077e714fa334c8ad34ecb95096c5,

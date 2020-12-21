@@ -8,28 +8,32 @@ public class TGmove : MonoBehaviour
     Vector2 movement;
     public Rigidbody2D rb;
     public float moveSpd;
+    public float climbingSpd;
     public float jumpforce;
     public bool grounded;
     public bool climb;
 
     float fmoveSpd;
+    float climbSpd;
     float fjumpforce;
     public float timeSpdup;
 
     public Animator rightArm;
     public Animator legs;
-    public Animator torso;
+    //public Animator torso;
     bool right;
     bool freeze = false;
     bool jump;
-    
+    string state = "idle";
     //public GroundCheck groundCheck;
+
     
     void Update()
     {
         
         float timeDif = Mathf.Abs(Time.deltaTime - Time.unscaledDeltaTime);
         fmoveSpd = moveSpd * (1 + (timeDif / timeSpdup));
+        climbSpd = climbingSpd * (1 + (timeDif / timeSpdup));
         fjumpforce = jumpforce * (1 + timeDif);
         movement.x = Input.GetAxis("Horizontal");
 
@@ -37,18 +41,27 @@ public class TGmove : MonoBehaviour
 
         if (grounded)
         {
-            if (Input.GetButton("Jump"))
+            if(movement.x == 0)
             {
-               jump = true;
+                state = "idle";
+            }else
+            {
+                state = "walk";
             }
-           else
+        }
+
+        if (Input.GetButton("Jump"))
+        {
+            if(state != "jump")
             {
-                jump = false;
+                state = "jump";
+                rb.AddForce(Vector2.up * jumpforce);
             }
         }
 
         if(climb)
         {
+            state = "climb";
             movement.y = -Input.GetAxis("Vertical");
         }
 
@@ -59,23 +72,36 @@ public class TGmove : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Debug.Log(state);
         if (!freeze || rb != null)
         {
-            //rb.velocity = new Vector2(movement.x * fmoveSpd * Time.fixedDeltaTime, movement.y * fjumpforce * Time.fixedDeltaTime);
-            if (!climb)
+            if(state == "idle")
             {
+                //no movement scripts
+
+                //Walk scripts to move to other states
                 rb.gravityScale = 1;
-                rb.velocity = new Vector2(movement.x * fmoveSpd * Time.fixedDeltaTime, rb.velocity.y);
-            }
-            else {
-                rb.gravityScale = 0;
-                rb.velocity = new Vector2(movement.x * fmoveSpd * Time.fixedDeltaTime, movement.y * fjumpforce * Time.fixedDeltaTime);
-                Debug.Log("climb");
+                rb.velocity = new Vector2(movement.x * fmoveSpd * Time.deltaTime, rb.velocity.y);
             }
 
-            if (jump && grounded)
+            if(state == "walk")
             {
-                rb.AddForce(Vector2.up * jumpforce);
+                rb.gravityScale = 1;
+                rb.velocity = new Vector2(movement.x * fmoveSpd * Time.deltaTime, rb.velocity.y);
+            }
+
+            if (state == "jump")
+            {
+                //Jumpforce is added when it changes
+                rb.gravityScale = 1;
+                rb.velocity = new Vector2(movement.x * fmoveSpd * Time.deltaTime, rb.velocity.y);
+            }
+
+            if(state == "climb") {
+                //climbing
+                rb.gravityScale = 0;
+                rb.velocity = new Vector2(movement.x * fmoveSpd * Time.fixedDeltaTime, movement.y * climbSpd * Time.fixedDeltaTime);
+                Debug.Log("climb");
             }
         }
     }
@@ -83,16 +109,16 @@ public class TGmove : MonoBehaviour
     public void groundSet(bool ground_)
     {
         grounded = ground_;
-        //Debug.Log("groundSet");
+        Debug.Log("groundSet");
     }
 
-    public void climbSet(bool _climb, bool _right)
+    public void climbSet(bool _climb)
     {
         climb = _climb;
-        right = _right;
         legs.SetBool("Climbing", climb);
-        torso.SetBool("Climbing", climb);
-        torso.SetBool("Right", right);
+        //torso.SetBool("Climbing", climb);
+        //torso.SetBool("Right", right);
+        Debug.Log("ClimbSet");
     }
 
     public void Freeze()

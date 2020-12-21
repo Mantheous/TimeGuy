@@ -13,23 +13,21 @@ public class GroundCheck : MonoBehaviour
     [SerializeField]
     private TGdie tgdie;
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "ground" || collision.gameObject.tag == "block")
         {
             if (!ClimbCheck)
             {
+                //ground Check
                 grounded = true;
-                Debug.Log("Grounded1" + grounded);
+                //Debug.Log("Grounded1" + grounded);
                 tgmove.groundSet(true);
             }else
             {
-                if (RightCheck)
-                    tgmove.climbSet(true, true);
-                else
-                    tgmove.climbSet(true, false);
+                //ClimbCheck
+                tgmove.climbSet(true);
             }
-            
         }
         /*
         if (collision.gameObject.tag == "DeathTile")
@@ -52,10 +50,8 @@ public class GroundCheck : MonoBehaviour
                 tgmove.groundSet(false);
             }else
             {
-                if (RightCheck)
-                    tgmove.climbSet(false, true);
-                else
-                    tgmove.climbSet(false, false);
+                tgmove.climbSet(false);
+                Debug.Log("Stopped Climbing");
             }
                 
         }
