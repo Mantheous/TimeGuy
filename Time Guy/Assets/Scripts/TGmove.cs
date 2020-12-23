@@ -26,7 +26,7 @@ public class TGmove : MonoBehaviour
     bool jump;
     string state = "idle";
     //public GroundCheck groundCheck;
-
+    float scaledGravity;
     
     void Update()
     {
@@ -36,17 +36,21 @@ public class TGmove : MonoBehaviour
         climbSpd = climbingSpd * (1 + (timeDif / timeSpdup));
         fjumpforce = jumpforce * (1 + timeDif);
         movement.x = Input.GetAxis("Horizontal");
-
+        scaledGravity = (Time.deltaTime / Time.unscaledDeltaTime);
         //grounded = groundReturn();
 
         if (grounded)
         {
-            if(movement.x == 0)
+            if(movement.x < 0.5)
             {
                 state = "idle";
-            }else
+                //Debug.Log(state);
+
+            }
+            else
             {
                 state = "walk";
+                //Debug.Log(state);
             }
         }
 
@@ -56,13 +60,22 @@ public class TGmove : MonoBehaviour
             {
                 state = "jump";
                 rb.AddForce(Vector2.up * jumpforce);
+                //Debug.Log(state);
             }
         }
+        //Debug.Log(Time.deltaTime / Time.unscaledDeltaTime);
 
         if(climb)
         {
             state = "climb";
             movement.y = -Input.GetAxis("Vertical");
+            //Debug.Log(state);
+        }else
+        {
+            if(state == "climb")
+            {
+                state = "idle";
+            }
         }
 
         if (rb != null)
@@ -72,7 +85,7 @@ public class TGmove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log(state);
+        //Debug.Log(state);
         if (!freeze || rb != null)
         {
             if(state == "idle")
@@ -80,20 +93,20 @@ public class TGmove : MonoBehaviour
                 //no movement scripts
 
                 //Walk scripts to move to other states
-                rb.gravityScale = 1;
+                rb.gravityScale = scaledGravity;
                 rb.velocity = new Vector2(movement.x * fmoveSpd * Time.deltaTime, rb.velocity.y);
             }
 
             if(state == "walk")
             {
-                rb.gravityScale = 1;
+                rb.gravityScale = scaledGravity;
                 rb.velocity = new Vector2(movement.x * fmoveSpd * Time.deltaTime, rb.velocity.y);
             }
 
             if (state == "jump")
             {
                 //Jumpforce is added when it changes
-                rb.gravityScale = 1;
+                rb.gravityScale = scaledGravity;
                 rb.velocity = new Vector2(movement.x * fmoveSpd * Time.deltaTime, rb.velocity.y);
             }
 
