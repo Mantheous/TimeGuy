@@ -26,7 +26,7 @@ public class TGmove : MonoBehaviour
     bool jump;
     string state = "idle";
     //public GroundCheck groundCheck;
-    float scaledGravity;
+    //public float scaledGravity;
     
     void Update()
     {
@@ -36,7 +36,7 @@ public class TGmove : MonoBehaviour
         climbSpd = climbingSpd * (1 + (timeDif / timeSpdup));
         fjumpforce = jumpforce * (1 + timeDif);
         movement.x = Input.GetAxis("Horizontal");
-        scaledGravity = (Time.deltaTime / Time.unscaledDeltaTime);
+        //scaledGravity = (Time.deltaTime / Time.unscaledDeltaTime);
         //grounded = groundReturn();
 
         if (grounded)
@@ -59,7 +59,7 @@ public class TGmove : MonoBehaviour
             if(state != "jump")
             {
                 state = "jump";
-                rb.AddForce(Vector2.up * jumpforce);
+                rb.AddForce(Vector2.up * jumpforce * Time.timeScale);
                 //Debug.Log(state);
             }
         }
@@ -93,27 +93,27 @@ public class TGmove : MonoBehaviour
                 //no movement scripts
 
                 //Walk scripts to move to other states
-                rb.gravityScale = scaledGravity;
-                rb.velocity = new Vector2(movement.x * fmoveSpd * Time.deltaTime, rb.velocity.y);
+                rb.gravityScale = 1;
+                rb.velocity = new Vector2(movement.x * fmoveSpd * Time.unscaledDeltaTime, rb.velocity.y);
             }
 
             if(state == "walk")
             {
-                rb.gravityScale = scaledGravity;
-                rb.velocity = new Vector2(movement.x * fmoveSpd * Time.deltaTime, rb.velocity.y);
+                rb.gravityScale = 1;
+                rb.velocity = new Vector2(movement.x * fmoveSpd * Time.unscaledDeltaTime, rb.velocity.y);
             }
 
             if (state == "jump")
             {
                 //Jumpforce is added when it changes
-                rb.gravityScale = scaledGravity;
-                rb.velocity = new Vector2(movement.x * fmoveSpd * Time.deltaTime, rb.velocity.y);
+                rb.gravityScale = 1;
+                rb.velocity = new Vector2(movement.x * fmoveSpd * Time.unscaledDeltaTime, rb.velocity.y);
             }
 
             if(state == "climb") {
                 //climbing
                 rb.gravityScale = 0;
-                rb.velocity = new Vector2(movement.x * fmoveSpd * Time.fixedDeltaTime, movement.y * climbSpd * Time.fixedDeltaTime);
+                rb.velocity = new Vector2(movement.x * fmoveSpd * Time.unscaledDeltaTime, movement.y * climbSpd * Time.unscaledDeltaTime);
                 Debug.Log("climb");
             }
         }

@@ -38,6 +38,7 @@ public class TimeSlow : MonoBehaviour
             Time.fixedDeltaTime = Time.timeScale * 0.02f;
         }else
         {
+            Debug.Log("Timefailure");
             if (slowdownFactor > 1)
             {
                 slowdownFactor += -0.1f;
