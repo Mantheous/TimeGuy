@@ -11541,6 +11541,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RocketLauncher (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7479653650741018878, guid: 3d09077e714fa334c8ad34ecb95096c5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7479653650741018879, guid: 3d09077e714fa334c8ad34ecb95096c5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11596,6 +11601,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7479653650741018875, guid: 3d09077e714fa334c8ad34ecb95096c5,
+        type: 3}
+      propertyPath: firepos
+      value: 
+      objectReference: {fileID: 1190246450}
     - target: {fileID: 7479653650741018877, guid: 3d09077e714fa334c8ad34ecb95096c5,
         type: 3}
       propertyPath: cam
@@ -11619,11 +11629,6 @@ PrefabInstance:
     - target: {fileID: 7479653650741018877, guid: 3d09077e714fa334c8ad34ecb95096c5,
         type: 3}
       propertyPath: laserOrigin
-      value: 
-      objectReference: {fileID: 1190246450}
-    - target: {fileID: 7479653650741018875, guid: 3d09077e714fa334c8ad34ecb95096c5,
-        type: 3}
-      propertyPath: firepos
       value: 
       objectReference: {fileID: 1190246450}
     m_RemovedComponents: []

@@ -596,7 +596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 4025299404163919406}
-  moveSpd: 300
+  moveSpd: 225
   climbingSpd: 200
   jumpforce: 500
   grounded: 0
@@ -1153,11 +1153,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 7479653650741018875, guid: 3d09077e714fa334c8ad34ecb95096c5,
-        type: 3}
-      propertyPath: firepos
-      value: 
-      objectReference: {fileID: 4025299404924742682}
     - target: {fileID: 7479653650741018879, guid: 3d09077e714fa334c8ad34ecb95096c5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1213,6 +1208,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7479653650741018875, guid: 3d09077e714fa334c8ad34ecb95096c5,
+        type: 3}
+      propertyPath: firepos
+      value: 
+      objectReference: {fileID: 4025299404924742682}
     - target: {fileID: 7479653650741018877, guid: 3d09077e714fa334c8ad34ecb95096c5,
         type: 3}
       propertyPath: cam

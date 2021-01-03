@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class TimeSlow : MonoBehaviour
 {
-    public float slowdownFactor;
-    public float slowlength;
+    public float slowdownFactor = 0;
     public float scale;
 
     private void Start()
     {
-        doSlow(100);
+        slowdownFactor = 1;
+        Time.timeScale = slowdownFactor;
+        //doSlow(0.5f);
     }
     private void Update()
     {
@@ -18,12 +19,13 @@ public class TimeSlow : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            
-            doSlow(1 * scale);
+            speedUp();
+            //doSlow(1 * scale);
         }
         if (Input.GetButtonDown("Fire2"))
         {
-            doSlow(-1 * scale);
+            slowdown();
+            //doSlow(-1 * scale);
         }
         
         //doSlow(Input.GetAxis("Vertical") * scale);
@@ -31,14 +33,16 @@ public class TimeSlow : MonoBehaviour
 
     public void doSlow(float slowChange)
     {
-        if (slowdownFactor < 1 && slowdownFactor > 0.05)
+        if (slowdownFactor < 1.1 && slowdownFactor > 0.4)
         {
             slowdownFactor += slowChange;
             Time.timeScale = slowdownFactor;
-            Time.fixedDeltaTime = Time.timeScale * 0.02f;
+            //Time.fixedDeltaTime = Time.timeScale * 0.02f;
         }else
         {
             Debug.Log("Timefailure");
+            Debug.Log(slowdownFactor);
+            /*
             if (slowdownFactor > 1)
             {
                 slowdownFactor += -0.1f;
@@ -46,10 +50,28 @@ public class TimeSlow : MonoBehaviour
             {
                 slowdownFactor += 0.1f;
             }
-            
+            */
             Time.timeScale = slowdownFactor;
-            Time.fixedDeltaTime = Time.timeScale * 0.02f;
+            //Time.fixedDeltaTime = Time.timeScale * 0.02f;
         }
         
+    }
+
+    void slowdown()
+    {
+        if(slowdownFactor > 0.5)
+        {
+            slowdownFactor -= scale;
+            Time.timeScale = slowdownFactor;
+        }
+    }
+
+    void speedUp()
+    {
+        if(slowdownFactor < 1)
+        {
+            slowdownFactor += scale;
+            Time.timeScale = slowdownFactor;
+        }
     }
 }
