@@ -9091,7 +9091,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slowdownFactor: 0
-  slowlength: 0
   scale: 0.1
 --- !u!4 &846137395
 Transform:
@@ -19657,6 +19656,16 @@ PrefabInstance:
         type: 3}
       propertyPath: jumpforce
       value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 4025299404163919402, guid: 5ed88dc089d5b214195080d84cd809f0,
+        type: 3}
+      propertyPath: maxGrav
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4025299404163919402, guid: 5ed88dc089d5b214195080d84cd809f0,
+        type: 3}
+      propertyPath: gravDecayRate
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ed88dc089d5b214195080d84cd809f0, type: 3}

@@ -16,6 +16,8 @@ public class TGmove : MonoBehaviour
     float fmoveSpd;
     float climbSpd;
     float fjumpforce;
+    public float maxGrav;
+    public float gravDecayRate;
     public float timeSpdup;
 
     public Animator rightArm;
@@ -56,35 +58,67 @@ public class TGmove : MonoBehaviour
                 state = "walk";
                 //Debug.Log(state);
             }
-        }
 
-        if (Input.GetButton("Jump"))
-        {
-            if(state != "jump")
+            //Jump can only happen when grounded
+            if (Input.GetButton("Jump"))
             {
-                state = "jump";
-                rb.AddForce(Vector2.up * jumpforce);
-                //Debug.Log(state);
+                if(state != "jump")
+                {
+                    state = "jump";
+                    rb.AddForce(Vector2.up * jumpforce);
+                    rb.gravityScale = 0.5f;
+                    //Debug.Log(state);
+                }else
+                {
+                    //Longer button is held less gravity more gravity is aplied.
+                   
+                }
             }
-        }
-        //Debug.Log(Time.timeScale * Time.unscaledDeltaTime);
-        //Debug.Log(Time.deltaTime);
 
-        if(climb)
-        {
-            state = "climb";
-            movement.y = -Input.GetAxis("Vertical");
-            //Debug.Log(state);
+                    
+
         }else
         {
-            if(state == "climb")
+            if(climb)
             {
-                state = "idle";
+                state = "climb";
+                movement.y = -Input.GetAxis("Vertical");
+                //Debug.Log(state);
+            }else
+            {
+                //This state is falling
+                if(state == "climb")
+                {
+                    state = "jump";
+                }
+
+                //falling mechanics
+
+                if(rb.gravityScale < maxGrav)
+                {
+                    rb.gravityScale += gravDecayRate * Time.deltaTime;
+                }else
+                {
+                    rb.gravityScale = maxGrav;
+                }
+
+                //When you realease in speeds up your decent
+                if (Input.GetButtonUp("Jump"))
+                {
+                    rb.gravityScale = maxGrav;
+                }
             }
         }
 
+       
+
+
+        
         if (rb != null)
-        rightArm.SetFloat("Velocity", rb.velocity.y);
+        {
+            rightArm.SetFloat("Velocity", rb.velocity.y);
+        }
+
         legs.SetInteger("Movement", Mathf.RoundToInt(Input.GetAxis("Horizontal")));
     }
 
@@ -111,7 +145,7 @@ public class TGmove : MonoBehaviour
             if (state == "jump")
             {
                 //Jumpforce is added when it changes
-                rb.gravityScale = 1;
+                //rb.gravityScale = 1;
                 rb.velocity = new Vector2(movement.x * fmoveSpd * Time.deltaTime, rb.velocity.y);
             }
 
